@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haze Haus - Handmade Crochet Creations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/logo.png" type="images/png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <img src="images/logo.png" alt="Haze Haus Logo">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#products">Shop</a></li>
+                <li class="nav-item"><a href="#">Our Story</a></li>
+            </ul>
+            <div class="nav-cart" onclick="toggleCart()">
+                <span>Cart</span>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Handcrafted with Heart & Yarn</h1>
+                <p>Discover unique, handmade crochet pieces made with love.</p>
+                <a href="#products" class="btn">Explore Collections</a>
+            </div>
+        </section>
+
+        <section id="products" class="product-section">
+            <h2>Our Creations</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-id="1" data-name="Black & Red Crochet Handbag" data-price="1899">
+                    <div class="product-image-container">
+                        <img src="images/pro1-1.jpg" alt="Black & Red Crochet Handbag" class="product-image active">
+                        <img src="images/pro1-2.jpg" alt="Black & Red Crochet Handbag" class="product-image">
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3 class="product-name">Black & Red Crochet Handbag</h3>
+                    <p class="product-price">₹1,899</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease-qty" data-id="1">-</button>
+                        <input type="number" value="1" min="1" class="product-qty" data-id="1">
+                        <button class="quantity-btn increase-qty" data-id="1">+</button>
+                    </div>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-id="2" data-name="Black & White Crochet Handbag" data-price="1899">
+                    <div class="product-image-container">
+                        <img src="images/pro2-1.jpg" alt="Black & White Crochet Handbag" class="product-image active">
+                        <img src="images/pro2-2.jpg" alt="Black & White Crochet Handbag" class="product-image">
+                        <img src="images/pro2-3.jpg" alt="Black & White Crochet Handbag" class="product-image">
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3 class="product-name">Black & White Crochet Handbag</h3>
+                    <p class="product-price">₹1,899</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease-qty" data-id="2">-</button>
+                        <input type="number" value="1" min="1" class="product-qty" data-id="2">
+                        <button class="quantity-btn increase-qty" data-id="2">+</button>
+                    </div>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-id="3" data-name="Pink & White Crochet Headband" data-price="799">
+                    <div class="product-image-container">
+                        <img src="images/pro3-1.jpg" alt="Pink and white Crocheted headband" class="product-image active">
+                        <img src="images/pro3-2.jpg" alt="Pink and white Crocheted headband" class="product-image">
+                        <img src="images/pro3-3.jpg" alt="Pink and white Crocheted headband" class="product-image">
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3 class="product-name">Pink & White Crochet Headband</h3>
+                    <p class="product-price">₹799</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease-qty" data-id="3">-</button>
+                        <input type="number" value="1" min="1" class="product-qty" data-id="3">
+                        <button class="quantity-btn increase-qty" data-id="3">+</button>
+                    </div>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card coming-soon">
+                   <div class="coming-soon-text">
+                        <h3 style="color: red;">Coming Soon!</h3>
+                   </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items" class="cart-items">
+            </div>
+        <div class="cart-summary">
+            <p>Total: <span id="cart-total">₹0.00</span></p>
+
+            <h3>Delivery Details</h3>
+            <div class="delivery-details">
+                <input type="text" id="address" placeholder="Your Full Address" class="payment-input" required>
+                <input type="tel" id="mobile" placeholder="Your Mobile Number" class="payment-input" required>
+            </div>
+
+
+            <h3>Choose Payment Method</h3>
+            <div class="payment-options">
+                <label>
+                    <input type="radio" name="payment-method" value="cod" checked> Cash on Delivery
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="card"> Card Payment
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="upi"> UPI Payment
+                </label>
+            </div>
+
+            <div id="payment-details-card" class="payment-details hidden">
+                <h4>Card Details</h4>
+                <input type="text" placeholder="Card Number" class="payment-input">
+                <input type="text" placeholder="MM/YY" class="payment-input small-input">
+                <input type="text" placeholder="CVV" class="payment-input small-input">
+                <input type="text" placeholder="Card Holder Name" class="payment-input">
+            </div>
+
+            <div id="payment-details-upi" class="payment-details hidden">
+                <h4>UPI ID</h4>
+                <input type="text" placeholder="Your UPI ID (e.g., example@bank)" class="payment-input">
+                <p class="upi-note">You will receive a payment request on your UPI app.</p>
+            </div>
+
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+
+    <footer>
+        <p>&copy; 2025 Haze Haus. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/hazehausx" target="_blank" class="social-btn instagram-btn">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="mailto:hazehausdesigns@gmail.com" class="social-btn email-btn">
+                <i class="fas fa-envelope"></i> Mail Us
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
